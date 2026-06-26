@@ -1,0 +1,15 @@
+.Layout{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+    grid-template-columns: 20% 60% 20%;
+}
+
+header, footer {
+    grid-column: span 3;
+}
+
+.Layout >* {
+    border: 1px solid black;
+}
+

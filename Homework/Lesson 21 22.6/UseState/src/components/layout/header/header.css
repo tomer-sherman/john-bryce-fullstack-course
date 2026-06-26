@@ -1,0 +1,94 @@
+/* header.css */
+
+/* Swapped to Orbitron (Weight 900) for heavy, readable AI vibes + Share Tech Mono */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Share+Tech+Mono&display=swap');
+
+/* Violent, unpredictable text skewing */
+@keyframes text-glitch {
+
+    0%,
+    100% {
+        transform: skew(0deg);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+
+    10% {
+        transform: skew(-15deg);
+        text-shadow: -4px 0 #880000, 4px 0 #ff0000;
+    }
+
+    15% {
+        transform: skew(0deg);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+
+    45% {
+        transform: skew(10deg);
+        text-shadow: 4px 0 #880000, -4px 0 #ff0000;
+    }
+
+    50%,
+    90% {
+        transform: skew(0deg);
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+}
+
+/* Creepy fade-in and pulse for the subtext */
+@keyframes warning-pulse {
+    0% {
+        opacity: 0.5;
+        color: #ff4d4d;
+    }
+
+    50% {
+        opacity: 1;
+        color: #ffffff;
+        text-shadow: 0 0 8px #ff0000;
+    }
+
+    100% {
+        opacity: 0.5;
+        color: #ff4d4d;
+    }
+}
+
+.Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.Header h1 {
+    font-family: 'Orbitron', system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 4.5rem;
+    margin: 0;
+    text-transform: uppercase;
+
+    /* 1. Define the gradient background first */
+    background: linear-gradient(180deg, #ff6666 0%, #ff0000 40%, #800000 100%);
+
+    /* 2. Clip it to the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Standard property for modern browser compatibility */
+
+    /* 3. Force the original font text color to be transparent so the gradient shows through */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    animation: text-glitch 3s infinite;
+}
+
+.Header p {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: warning-pulse 2s infinite ease-in-out;
+}

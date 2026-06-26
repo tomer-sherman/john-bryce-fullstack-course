@@ -1,0 +1,21 @@
+<kittens>
+
+    <kitten>
+        <name>Mitsi</name>
+        <age>2</age>
+        <color>white</color>
+    </kitten>
+
+    <kitten>
+        <name>Meow</name>
+        <age>3</age>
+        <color>Orange</color>
+    </kitten>
+
+    <kitten>
+        <name>Amos</name>
+        <age>69</age>
+        <color>black</color>
+    </kitten>
+    
+</kittens>

@@ -1,0 +1,122 @@
+Node.js:
+Its a Js that runs outside the web application.
+On a regular computer, using Node.js
+That's why it's used too build servers, - backend.
+however, not only, you can build an app that runs without the usage of a sever
+
+Terminal:
+Its a program that lets you run commands on the Windows, Or inside a App inside your Pc.
+Terminal always, is inside a specific files, Commands can be used only inside this file.
+
+this is CMD for example:
+(dir) a command that shows, all the directorys inside a file.
+(cd (someDirectory name)) enters this file.
+
+all the terminals let you do different stuff in your pc / app in it.
+
+CLI
+Command-Line Interface,
+A couple of commands, in a console, that start with the same starting name:
+
+
+like in git:
+git init
+git add . 
+git commit -m"Hello"
+so Git is considered (CLI):
+
+which is a couple of cmnds that start with git.
+
+Library:
+Separate code that a project uses, in order too do some kind of commands.
+For example:
+You can build a library that checks whether an email is valid is no.
+
+Framework:
+Its a system, for building projects, She sets the coder, how too work in the project.
+What are the rules,
+What are the files inside the project.
+Framework, changes the code, in the end too something else.
+
+Vanilla:
+Working with a native without any framework.
+For example working with JS without
+
+Component:
+A specific component of UI in a project.
+It does not exist, in native Html.
+
+You can modify it however you want,
+Basically for example a button labeled with a Switch label will be in native html like this:
+
+
+<div>
+<label>Switch</label>
+<input type="checkbox">
+</div>
+
+You need 3 Different labels too create this specific button component.!!!!
+
+In more modern html and css, you use different files, and put inside the components.
+
+and in the main page you are editing you Just simply Call the Components name and it is shown.
+
+
+
+MPA:
+Multi-Page Application:
+Its simply a multi, page site, with 2 or more pages.
+That all the pages, are in the SERVER!!!!!,
+Every time a customer, clicks on a different page, he takes info from the server.
+
+Pros:
+A customer gets only the page, he needs.
+You can build all of this in the server.
+
+Cons:
+Every new page a user wants too enter, he needs too use the server energy.
+Global, vars, are deleted every time, change a page.
+SLOW AF
+
+SPA:
+The same but with a single page:
+The page it self is blank,
+However the page has a link that is connected Too JS that builds localy all the Html Css Dynamically.
+
+Pros:
+There is no need, too glide too the server an take info a bunch of times, only one time.
+The global data is saved when you change pages!!!.
+All the pages are built in the customer site.
+FAST!!!
+
+Cons:
+The customer, Gets all the site in a single click, (But you can fix it using lazy loading).
+
+
+You cannot build this, with 2 different coding Technologies.
+
+React:
+Is a framework, that builds online sites in SPA, that is based on components.
+The infostructure of react, Uses JS outside the web. Thats why you have too use nodeJS
+
+Vite: 
+Is a CLI which holds a bunch of librarys.
+That exist in NPM
+This Cli has React inside it.
+The guy who built Vite, created Vue.js which is like react.
+
+React project creation.
+
+you simply enter a folder, with cmd.
+then in the cmd write create-vite
+
+keep in mind if you work on a new computer you have too install node.js from the internet
+and install, enter the cmd and write npm --global create-vite
+the then you can doo the thing above
+
+
+
+
+
+
+

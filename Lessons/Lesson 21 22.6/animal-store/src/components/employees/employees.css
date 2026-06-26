@@ -1,0 +1,9 @@
+.Employees {
+	border: solid 1px black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.Employees>li>p{
+    font-size: x-small;
+}

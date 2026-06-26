@@ -1,0 +1,78 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.layout {
+    display: grid;
+    height: 100vh;
+    background-color: black;
+    gap: 2px;
+
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 15% 75% 10%;
+
+    grid-template-areas:
+        "header header"
+        "aside main"
+        "footer footer";
+
+}
+
+.layout>* {
+    background-color: rgb(255, 210, 210);
+
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+   
+}
+
+aside{
+    grid-area: aside;
+    display: grid;
+    place-items: center;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+aside nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+   
+}
+
+main{
+   display: flex;
+    flex-direction: column;      /* Stacks content vertically */
+    align-items: center;         /* Centers items horizontally */
+    justify-content: flex-start; /* Pushes content to the top */
+    gap: 20px;                   /* Adds space between the title and images */
+    padding-top: 20px;           /* Optional: Adds a little breathing room from the top */
+}
+
+.image-rows{display: flex;               /* Puts images in a row */
+    gap: 15px;                   /* Space between images */}
+
+footer{display: flex;
+justify-content: center;}
+
+.animals{
+    width: 100px;
+    height: 100px;
+}

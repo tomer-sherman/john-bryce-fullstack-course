@@ -1,0 +1,12 @@
+.Copyrights{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Copyrights > p {
+    background-color: aqua;
+    font-weight: bold;
+}

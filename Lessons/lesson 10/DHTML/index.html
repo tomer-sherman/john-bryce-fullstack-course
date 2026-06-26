@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="loadAndDisplayAllBooks()">
+
+    <form onsubmit="sendBook()" id="bookForm"  method=" dialog">
+
+        <label>Book name:</label>
+        <input type="text" id="nameBox" required maxlength="50">
+        <br><br>
+
+        <label>bookNameBox</label>
+        <textarea id="descriptionBox" required minlength="5" maxlength="1000"></textarea>
+        <br><br>
+
+        <label>Book price:</label>
+        <input type="number" id="priceBox" required min="0" max="1000" step="0.01">
+        <br><br>
+        <button type="reset">Clear</button>
+        <button>Add</button>
+        <button onclick="clearAllStorage()">Delete</button>
+
+    </form>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name: </th>
+                <th>Description: </th>
+                <th>Price: </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>

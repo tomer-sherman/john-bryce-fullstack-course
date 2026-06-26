@@ -1,0 +1,191 @@
+/* ==========================================
+   1. GLOBAL STYLES & SURREAL VAN GOGH BACKGROUND
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', 'Times New Roman', serif; /* Changed to a classic serif to fit the painted aesthetic */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+    gap: 40px;
+    color: #f8fafc;
+    
+    /* Van Gogh inspired color palette: Deep Prussian blues, swirling cobalt, and stark ochre gold */
+    background: linear-gradient(
+        135deg, 
+        #0b132b 0%, 
+        #1c2541 25%, 
+        #3a506b 45%, 
+        #b5838d 55%, /* Warm undertone twilight */
+        #e0a96d 70%, /* Thick impasto amber gold */
+        #1c2541 100%
+    );
+    background-size: 300% 300%;
+    /* Animation mimics the dramatic, twisting movement of surreal night skies */
+    animation: starryNightSwirl 20s ease-in-out infinite Alternate;
+    overflow-x: hidden;
+}
+
+@keyframes starryNightSwirl {
+    0% {
+        background-position: 0% 20%;
+    }
+    50% {
+        background-position: 100% 80%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+/* ==========================================
+   2. FORM DESIGN (Surreal Textured Card)
+   ========================================== */
+form {
+    /* Dream-like translucent glass filter over the swirling canvas */
+    background: rgba(11, 19, 43, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+    /* Border colored like weathered gold canvas trim */
+    border: 1px solid rgba(224, 169, 109, 0.3);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 
+                inset 0 0 20px rgba(58, 80, 107, 0.2);
+    animation: surrealEntrance 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+label {
+    font-size: 0.9rem;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #e0a96d; /* Golden paint color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    background: rgba(11, 19, 43, 0.8);
+    border: 1px solid rgba(58, 80, 107, 0.6);
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-family: monospace; /* Gives a raw, mechanical contrast to the art */
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+input:focus {
+    border-color: #e0a96d;
+    box-shadow: 0 0 15px rgba(224, 169, 109, 0.4);
+    background: #0b132b;
+}
+
+/* Cyber-Impasto Button */
+button {
+    margin-top: 10px;
+    padding: 14px;
+    border: 1px solid rgba(224, 169, 109, 0.4);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #0b132b;
+    cursor: pointer;
+    
+    /* Heavy paint blending gradient transition */
+    background: linear-gradient(90deg, #e0a96d, #3a506b, #e0a96d);
+    background-size: 200% auto;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-position: right center;
+    color: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 25px rgba(58, 80, 107, 0.6);
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+/* ==========================================
+   3. TABLE DESIGN
+   ========================================== */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(11, 19, 43, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    animation: surrealEntrance 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+th {
+    background: rgba(11, 19, 43, 0.9);
+    padding: 18px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    color: #a3b18a; /* Mossy cypress green tone */
+    border-bottom: 2px solid rgba(224, 169, 109, 0.3);
+    text-align: center;
+}
+
+td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 1.1rem;
+    color: #edf2f4;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+/* Eerie row hover that pulls color from the painting beneath */
+tr:hover td {
+    background-color: rgba(58, 80, 107, 0.3);
+    color: #e0a96d;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==========================================
+   4. SURREAL ENTRANCE ANIMATION
+   ========================================== */
+@keyframes surrealEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97) rotate(-0.5deg);
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+        filter: blur(0);
+    }
+}

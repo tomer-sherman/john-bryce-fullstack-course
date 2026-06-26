@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Contact us
+    </title>
+</head>
+<!-- Main menu -->
+
+<body>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+    <hr>
+    <h1>Contact Us</h1>
+    <form action="save_data" method="post">
+        <label>First Name:</label>
+        <input type="text" name="firstName" required minlength="2" maxlength="20">
+        <br>
+
+        <label>Last Name:</label>
+        <input type="text" name="lastName" required minlength="2" maxlength="20">
+        <br>
+
+        <select name="city" required>
+            <option value="" disabled selected>Select City</option>
+            <option> Tel Aviv</option>
+            <option> Jerusalem</option>
+            <option> Haifa</option>
+        </select>
+        <br>
+
+        <label>Message(50 characters max):</label>
+        <br>
+        <textarea name="message" maxlength="50"></textarea>
+        <br>
+
+        <label>Birth Date:</label>
+        <input type="date" name="birthDate">
+        <br>
+
+        <input type="checkbox" name="promo" id="promoCheckbox">
+        <label for="promoCheckbox">Send me promotional email</label>
+        <br>
+
+        <label>Gender:</label>
+        <br>
+
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label>
+
+        <button>Send</button>
+    </form>
+
+
+</body>
+
+</html>
