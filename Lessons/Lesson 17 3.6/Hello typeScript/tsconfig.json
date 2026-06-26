@@ -1,0 +1,8 @@
+// A json File that contains, settings for the compiler
+{
+    "compilerOptions": {
+        "target": "esnext", // uses the latest JS version
+        "outDir": "build", // This is in what folder the project will take place
+        "rootDir": "src" 
+    }
+}

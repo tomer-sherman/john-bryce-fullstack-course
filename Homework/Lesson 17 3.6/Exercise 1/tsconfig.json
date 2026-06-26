@@ -1,0 +1,10 @@
+// Must create this file
+// This is the setup for the compiler
+{
+    "compilerOptions": {
+        "target": "esnext", // Latest JS version
+        "outDir": "build", // What the compiler builds
+        "rootDir": "src"    // Src of the programming typeScript
+        
+    }
+}

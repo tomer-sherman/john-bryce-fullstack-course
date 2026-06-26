@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; 
+  width: 100%;
+}
+
+body {
+  line-height: 1.6;
+  font-family: sans-serif;
+  /* Prevents unwanted horizontal scrolls if a percentage is slightly off */
+  overflow-x: hidden; 
+}
+
+
+/* 2. Make the body fill the screen height */
+html, body {
+  height: 100%;
+}
+
+/* 3. Set up the Layout */
+body {
+  display: flex;
+  flex-direction: column; /* Stack them vertically */
+}
+
+header h1 {
+  font-family: "Impact", "Arial Black", sans-serif; /* Heavy and tall */
+  text-transform: uppercase; /* Tarkov UI is almost all caps */
+  font-size: 3rem;
+  letter-spacing: 5px; /* Adds that cold, calculated look */
+  color: #d1d1d1; /* A cold, metallic light gray */
+  text-shadow: 2px 2px 0px #000; /* Sharp, hard shadow (no blur) */
+}
+
+header {
+  /* Dark, gritty background color */
+  background-color: #1a1a1a; 
+  /* Add a rough texture or a top/bottom border that looks like industrial metal */
+  border-bottom: 4px solid #333;
+  border-top: 4px solid #333;
+  /* Add a slight 'noise' or dark gradient to mimic worn metal */
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Images/header.jpg');
+}
+
+header {
+  height: 20%;
+  background: #ffffff; /* Light grey so you can see it */
+  display: flex;
+    flex-direction: column; 
+  
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  
+}
+
+header nav {
+  /* 3. Pull the nav out of the normal flow */
+  position: absolute;
+  top: 10px;  /* Distance from the top */
+  left: 10px; /* Distance from the left */
+}
+
+header nav a {
+  color: #8a8a8a;
+  text-decoration: none;
+  font-family: monospace; /* Looks like computer data/dog tags */
+  font-size: 0.8rem;
+  border: 1px solid #444; /* Boxed in like a military UI button */
+  padding: 5px 10px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+header nav a:hover {
+  background: #f0f0f0;
+  color: #000; /* Quick 'invert' effect on hover */
+}
+
+main {
+  height: 75%;
+  background: black;
+}
+
+footer {
+  height: 5%;
+  background: #333;
+  color: white;
+}
+
+
+
+main {
+  /* Scope the variables to this tag only */
+  --bg-main: #0d0d0d;
+  --bg-surface: #181818;
+  --bg-active: #222222;
+  --text-primary: #e0e0e0;
+  --text-muted: #8a8a8a;
+  --accent: #9a8866;
+  --border: #2a2a2a;
+  --radius: 2px;
+
+  /* Main Container Styles */
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  padding: 2rem;
+  font-family: sans-serif;
+  min-height: 100vh;
+
+  /* Nested Content Styles */
+  & .content-section {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--border);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: var(--radius);
+  }
+
+  & .content-section:hover {
+    border-left-color: var(--accent);
+    background-color: var(--bg-active);
+  }
+
+  & h1, & h2 {
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+  }
+
+  & .meta-info {
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 0.8rem;
+  }
+
+  & button {
+    background: var(--accent);
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: var(--radius);
+  }
+}

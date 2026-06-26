@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form onsubmit="addColor()" method="dialog">
+        <label>Choose your red</label>
+        <input type="range" id="redBox" min="0" max="255">
+
+        <label>Choose your green</label>
+        <input type="range" id="greenBox" min="0" max="255">
+
+        <label>Choose your blue</label>
+        <input type="range" id="blueBox" min="0" max="255">
+
+        <button>Add Color</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+
+                <th>Red</th>
+                <th>Green</th>
+                <th>Blue</th>
+                <th>Combined Color</th>
+                
+            </tr>
+        </thead>
+
+        <tbody id="tBody">
+
+        </tbody>
+        
+
+    </table>
+
+
+</body>
+
+</html>

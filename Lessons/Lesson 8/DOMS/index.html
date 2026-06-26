@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<h1 id = "mainHeader">Header</h1>
+<br>
+    <div>
+        <button id="myButton" dir="rtl">Click Me</button>
+        <hr>
+        // somewhere in the data there is an object that is saved like
+        this >>
+        // const button = {
+        value : "Click Me",
+        id : "myButton",
+        dir: "rtl",
+        ....
+        }
+    </div>
+    // if there is a div that consumes tags, div becomes an object that has more objects
+    // the computer scans all the tags , from the parents too the children. only then it shows the page.
+    // Its like a tree The DOM TREE, like a family tree. at the top of the tree there is Document then Html then inside
+    the body
+    // there are 2 children those children have more children .......
+    <hr>
+    <button onclick="paintHeader()">Paint header </button>
+    <br>
+    <br>
+    <button onclick="evenChecker()">add a number</button>
+    <hr>
+    <button onclick="addPrompt()">Add prompt too the paragraph below</button> <br>
+    <p1 id="firstP">Good morning!!<br> </p1>
+    <hr>
+    <br>
+
+    <label> Enter your name: </label>
+    <input type="text" id="firstNameBox">
+    <button onclick="alertBox()">Click</button>
+
+</body>
+
+</html>

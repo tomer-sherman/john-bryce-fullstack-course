@@ -1,0 +1,13 @@
+kittens:
+  - kitten: 
+    name: Mitsi
+    age: 2
+    color: White
+  - kitten: 
+    name: Greg
+    age: 4
+    color: fucking black
+  - kitten: 
+    name: Batman
+    age: 6
+    color: Fucking unicorn
