@@ -1,0 +1,16 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { Layout } from './components/layout-area/layout/layout'
+import {BrowserRouter} from "react-router-dom"; // FUCKING BUGGED you have too Write this.
+
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+
+    <BrowserRouter>
+      <Layout />
+    </BrowserRouter>
+
+  </StrictMode>,
+)

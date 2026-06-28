@@ -1,0 +1,29 @@
+/* footer.css */
+
+/* 1. Scope exactly to your existing container */
+.Footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. Premium, understated typography */
+.Footer p {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Pulls the 70% opacity white from your index.css */
+    color: var(--color-text-muted); 
+    margin: 0;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* 3. Subtle interaction on hover */
+.Footer p:hover {
+    color: var(--color-text-main);
+    text-shadow: 0 0 10px var(--neon-glow);
+}

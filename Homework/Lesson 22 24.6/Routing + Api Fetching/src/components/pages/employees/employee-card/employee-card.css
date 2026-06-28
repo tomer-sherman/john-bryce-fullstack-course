@@ -1,0 +1,82 @@
+/* employee-card.css */
+
+/* 1. Scope the Card Container */
+.EmployeeCard {
+    display: flex;
+    flex-direction: column;
+    /* Stacks the spans and image vertically */
+    align-items: center;
+    justify-content: center;
+
+    /* Premium Glassmorphism base */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+}
+
+/* 2. Smooth Hover Interaction for the whole card */
+.EmployeeCard:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+}
+
+/* 3. The Avatar Styling */
+.EmployeeCard img {
+    /* MAGIC TRICK: Even though the img is at the bottom of your JSX, 
+       this forces it to render at the top of the flex container! 
+    */
+    order: -1;
+
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    /* Creates space between the image and the names */
+
+    /* Neon cyan framing */
+    border: 3px solid var(--color-bg-deep);
+    box-shadow: 0 0 0 2px var(--neon-cyan),
+        0 0 20px var(--neon-glow);
+
+    transition: transform 0.4s ease;
+}
+
+/* Subtle scale effect on the image when hovering the card */
+.EmployeeCard:hover img {
+    transform: scale(1.05);
+}
+
+/* 4. Typography for the Names */
+.EmployeeCard span {
+    color: var(--color-text-main);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* 5. Target the 3rd span (City) to make it a sleek subtitle */
+.EmployeeCard span:nth-of-type(3) {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    /* Uses the 70% opacity white */
+    font-weight: 500;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    /* Small accent line above the city */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.8rem;
+    width: 80%;
+}

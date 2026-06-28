@@ -1,0 +1,11 @@
+/* employees.css */
+
+/* 1. The Grid Container Wrapper */
+.Employees {
+    display: grid;
+    /* Automatically creates responsive columns for your EmployeeCards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 0;
+    width: 100%;
+}

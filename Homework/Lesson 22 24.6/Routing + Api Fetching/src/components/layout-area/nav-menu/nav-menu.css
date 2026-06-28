@@ -1,0 +1,60 @@
+/* nav-menu.css */
+
+/* 1. Scope the container to perfectly center the links */
+.NavMenu {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* 2. Base styling for the links */
+.NavMenu a {
+    text-decoration: none;
+    /* Using the muted white variable so they blend in nicely */
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* 3. The invisible underline setup */
+.NavMenu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    /* Starts at 0 width (invisible) */
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
+    transition: width 0.3s ease-out;
+}
+
+/* 4. Hover State: Text lights up and the line grows */
+.NavMenu a:hover {
+    color: var(--color-text-main);
+    text-shadow: 0 0 10px var(--neon-glow);
+}
+
+.NavMenu a:hover::after {
+    width: 100%;
+}
+
+/* 5. Active State: React Router automatically applies this class! */
+.NavMenu a.active {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 15px var(--neon-glow);
+}
+
+/* Keep the glowing line solid for the active page */
+.NavMenu a.active::after {
+    width: 100%;
+}

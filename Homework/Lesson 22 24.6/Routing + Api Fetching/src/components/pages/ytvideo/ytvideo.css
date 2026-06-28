@@ -1,0 +1,36 @@
+/* ytvideo.css */
+
+/* 1. Center the container */
+.Ytvideo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Added a bit more padding top/bottom for the larger size */
+    padding: 3rem 0;
+}
+
+/* 2. Style the actual video player */
+.Ytvideo iframe {
+    width: 100%;
+    /* CRANKED THIS UP FROM 800px TO 1200px */
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+
+    /* High-end glass/neon framing */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Smooth hover transitions */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. Subtle neon cyan lift on hover */
+.Ytvideo iframe:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+    transform: translateY(-4px);
+}

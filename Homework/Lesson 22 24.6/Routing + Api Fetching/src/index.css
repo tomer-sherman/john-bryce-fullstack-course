@@ -1,0 +1,81 @@
+/* index.css */
+
+/* 1. Global CSS Variables 
+   These don't leak styles, they just store your royal blue and neon colors 
+   so you can use them anywhere without typing hex codes. */
+:root {
+    --color-primary: #153bc0;
+    --color-primary-dark: #0a1f5c;
+    --color-bg-deep: #050b14;
+
+    --color-text-main: #ffffff;
+    --color-text-muted: rgba(255, 255, 255, 0.7);
+
+    --neon-cyan: #00d4ff;
+    --neon-glow: rgba(0, 212, 255, 0.4);
+}
+
+/* 2. Absolute Minimum Reset 
+   Wipes browser defaults so your app looks identical on Chrome, Safari, etc. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-bg-deep);
+    color: var(--color-text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Premium Custom Scrollbar 
+   Replaces the ugly Windows/Mac default scrollbar to match the royal blue theme. */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-dark);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* 4. SCOPED Typography & Media (Zero Leakage) 
+   These will ONLY apply to elements safely nested inside your <div className="Layout"> */
+.Layout a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.Layout a:hover {
+    color: var(--neon-cyan);
+}
+
+.Layout h1,
+.Layout h2,
+.Layout h3,
+.Layout h4,
+.Layout h5,
+.Layout h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.Layout img {
+    max-width: 100%;
+    display: block;
+}
