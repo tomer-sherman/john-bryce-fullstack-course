@@ -1,0 +1,90 @@
+/* layout.css */
+
+/* 1. The Fluid Canvas */
+.Layout {
+    min-height: 100vh;
+    display: grid;
+    /* Clean 3-row architecture */
+    grid-template-rows: auto auto 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    /* Deep abyss radial glow radiating from the top */
+    background: radial-gradient(circle at 50% 0%, #002244 0%, #030712 60%);
+    background-attachment: fixed;
+}
+
+/* 2. Base Anti-Boxy Glassmorphism (ZERO LEAKAGE) */
+.Layout header,
+.Layout nav,
+.Layout main {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    /* Soft cyber-glow pulling from your index variables */
+    box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.1);
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 3. Floating Pill Docks */
+.Layout header {
+    padding: 1rem 3rem;
+    /* Extreme radius creates a perfect pill shape */
+    border-radius: 9999px;
+    position: sticky;
+    top: 1.5rem;
+    z-index: 100;
+}
+
+.Layout nav {
+    padding: 0.75rem 2.5rem;
+    /* Floating centralized pill for navigation */
+    border-radius: 9999px;
+    justify-self: center;
+    z-index: 90;
+    /* Subtle entrance */
+    animation: dropIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 4. Fluid Main Interface */
+.Layout main {
+    padding: 3rem;
+    /* Large fluid radius for the main content area */
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    /* Smooth, scaled entrance */
+    animation: cyberFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 5. Interactive Cyber Enhancements */
+.Layout header:hover,
+.Layout nav:hover {
+    border-color: rgba(0, 240, 255, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.3);
+}
+
+/* 6. Hardware-Accelerated Animations */
+@keyframes cyberFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes dropIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

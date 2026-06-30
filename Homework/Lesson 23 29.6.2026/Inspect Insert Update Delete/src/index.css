@@ -1,0 +1,61 @@
+/* index.css */
+
+/* 1. FLUID HIGH-TECH VARIABLES 
+   We are setting up variables for maximum curves and cyber-aesthetics. */
+:root {
+  /* Deep abyss background with cyber-cyan energy */
+  --color-bg-deep: #030712;
+  --color-primary: #00f0ff;
+  --color-primary-dark: #002244;
+
+  --color-text-main: #f8fafc;
+  --color-text-muted: #8b9bb4;
+
+  /* THE ANTI-BOX VARIABLES: Use these anywhere to enforce curves */
+  --radius-fluid: 32px;
+  /* Soft, organic curves for large containers */
+  --radius-pill: 9999px;
+  /* Perfect pill shape for buttons/nav items */
+
+  /* High-tech floating glow instead of hard drop shadows */
+  --cyber-glow: 0 10px 30px -10px rgba(0, 240, 255, 0.5);
+}
+
+/* 2. ABSOLUTE RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-main);
+  /* High-tech, clean typography stack */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. FLUID SCROLLBAR 
+   We keep the scrollbar thin and fully rounded (pill shape) so it doesn't look like a blocky Windows default. */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-dark);
+  border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+  box-shadow: var(--cyber-glow);
+}

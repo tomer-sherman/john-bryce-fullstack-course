@@ -1,0 +1,68 @@
+
+/* 1. The Full Page Container */
+.EmployeeDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Moves everything to the top instead of the center */
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    padding-top: 10vh;
+    /* Drops it down just slightly from the top edge */
+}
+
+/* 2. The Page Title */
+.EmployeeDetails h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #00d4ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+    text-align: center;
+}
+
+/* 3. The Loading State (Animation Removed) */
+.EmployeeDetails p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00d4ff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 4. The Card Wrapper */
+.details-card-wrapper {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 1. Force the base text of the card to be bright */
+.EmployeeCard {
+    color: #ffffff;
+}
+
+/* 2. Target any <p> tags, spans, or headings you are using */
+.EmployeeCard p,
+.EmployeeCard h2,
+.EmployeeCard h3,
+.EmployeeCard span {
+    color: #ffffff !important;
+    /* Pure white text */
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+    /* Adds a slight glow to lift it off the dark glass */
+}
+
+/* 3. If you want the labels (like "BIRTHDAY:") to pop with that cyan color */
+.EmployeeCard p::first-line,
+.stat-label {
+    color: #00ffff !important;
+    /* Bright neon cyan */
+}

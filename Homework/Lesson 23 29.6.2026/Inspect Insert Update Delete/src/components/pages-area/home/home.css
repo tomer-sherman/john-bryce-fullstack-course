@@ -1,0 +1,24 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 70vh;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.Home h1 {
+    font-size: 3.5rem;
+    color: #ff4757;
+    /* A bright, energetic crimson */
+    margin-bottom: 20px;
+}
+
+.Home p {
+    font-size: 1.25rem;
+    margin: 8px 0;
+    line-height: 1.6;
+    font-weight: bold;
+}

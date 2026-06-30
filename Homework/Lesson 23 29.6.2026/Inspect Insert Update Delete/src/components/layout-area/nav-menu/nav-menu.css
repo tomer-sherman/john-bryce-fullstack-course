@@ -1,0 +1,51 @@
+/* nav-menu.css */
+
+/* 1. Scoped Container */
+.NavMenu {
+    display: flex;
+    /* Spacing between the fluid buttons */
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* 2. Base High-Tech Link Styling */
+.NavMenu a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    /* Starts muted */
+    font-size: 0.9rem;
+    font-weight: 600;
+    /* Wide tracking for the terminal UI aesthetic */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    /* Padding creates the clickable area for the pill */
+    padding: 0.6rem 1.5rem;
+
+    /* THE ANTI-BOX: Forces the background/hover to be a perfect pill */
+    border-radius: var(--radius-pill);
+
+    /* Hardware-accelerated smooth transitions */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3. Fluid Hover Interaction */
+.NavMenu a:hover {
+    color: var(--color-text-main);
+    /* Very subtle glass background on hover */
+    background: rgba(255, 255, 255, 0.03);
+    /* Inset shadow creates a sunken, high-tech button feel */
+    box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.15);
+}
+
+/* 4. The Active State (Automatically applied by NavLink) */
+.NavMenu a.active {
+    color: var(--color-primary);
+    /* Soft cyan fill so the user knows exactly where they are */
+    background: rgba(0, 240, 255, 0.08);
+    /* Deep internal cyber glow */
+    box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.2);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}

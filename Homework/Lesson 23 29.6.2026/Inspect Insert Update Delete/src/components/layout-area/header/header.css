@@ -1,0 +1,62 @@
+/* header.css */
+
+/* 1. Scoped Container */
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2. High-Tech HUD Typography */
+.Header p {
+    margin: 0;
+    display: flex;
+    /* Aligns the text with the blinking dot */
+    align-items: center;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    /* Wide tracking is a staple of high-tech/sci-fi UI */
+    letter-spacing: 6px;
+    color: var(--color-text-main);
+
+    /* Soft cyber-glow instead of a hard drop shadow */
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+
+    /* Makes it feel like an app interface, not a text document */
+    user-select: none;
+}
+
+/* 3. The "Live Status" Indicator (Anti-boxy detail) */
+.Header p::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    /* Uses your global pill variable to guarantee a perfect circle */
+    border-radius: var(--radius-pill);
+    background: var(--color-primary);
+    margin-right: 1.2rem;
+    box-shadow: 0 0 12px var(--color-primary);
+
+    /* Triggers the breathing animation */
+    animation: statusBlink 2s ease-in-out infinite;
+}
+
+/* 4. Smooth Terminal Breathing Animation */
+@keyframes statusBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 15px var(--color-primary);
+    }
+
+    50% {
+        opacity: 0.3;
+        box-shadow: 0 0 2px var(--color-primary);
+    }
+}

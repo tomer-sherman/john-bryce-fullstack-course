@@ -1,0 +1,122 @@
+/* employee-details.css */
+
+/* 1. Center the entire view */
+.EmployeeDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    width: 100%;
+    min-height: 60vh;
+}
+
+/* 2. Terminal Loading Text */
+.EmployeeDetails p {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    /* Blinking effect like a terminal processing data */
+    animation: terminalPulse 1.5s infinite;
+}
+
+@keyframes terminalPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 15px var(--color-primary);
+    }
+
+    50% {
+        opacity: 0.4;
+        text-shadow: none;
+    }
+}
+
+/* 3. The Grid Wrapper */
+.EmployeeDetails .details-card-wrapper {
+    display: grid;
+    /* Creates 3 equal columns for your 3 buttons */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 550px;
+
+    animation: cyberFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 4. Force the EmployeeCard to sit on top */
+/* This targets the <div> that the <EmployeeCard /> component renders */
+.EmployeeDetails .details-card-wrapper>div {
+    /* Tells the card to span across all 3 grid columns */
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+}
+
+/* 5. Base Fluid Button Styling for all NavLinks */
+.EmployeeDetails a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    /* ANTI-BOXY: Perfect pill shapes */
+    border-radius: var(--radius-pill);
+    padding: 0.8rem 0.5rem;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* 6. Specifically target the "Back" button (1st link) */
+.EmployeeDetails a:nth-of-type(1) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-muted);
+}
+
+.EmployeeDetails a:nth-of-type(1):hover {
+    color: var(--color-text-main);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 7. Specifically target the "Edit" button (2nd link) */
+.EmployeeDetails a:nth-of-type(2) {
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    color: var(--color-primary);
+}
+
+.EmployeeDetails a:nth-of-type(2):hover {
+    background: var(--color-primary);
+    color: var(--color-bg-deep);
+    /* Inverts text on hover */
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 8. Specifically target the "Delete" button (3rd link) */
+.EmployeeDetails a:nth-of-type(3) {
+    border: 1px solid rgba(255, 42, 42, 0.3);
+    /* Cyber Crimson */
+    color: #ff4d4d;
+}
+
+.EmployeeDetails a:nth-of-type(3):hover {
+    background: #ff4d4d;
+    color: #000000;
+    box-shadow: 0 0 25px rgba(255, 42, 42, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Push down slightly when clicked */
+.EmployeeDetails a:active {
+    transform: translateY(1px);
+}
