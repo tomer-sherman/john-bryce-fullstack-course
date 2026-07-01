@@ -1,0 +1,79 @@
+/* 1. Main Card Container */
+.QnaCard {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    /* Indicates to the user that it is clickable */
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect: Glowing border and slight lift */
+.QnaCard:hover {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: #6366f1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+/* Active/Click State */
+.QnaCard:active {
+    transform: translateY(0);
+}
+
+/* 2. The Question Text */
+.QnaCard>.question {
+    margin: 0;
+    color: #f8fafc;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.QnaCard>.question>strong {
+    color: #6366f1;
+    /* Indigo highlight for the "Question:" label */
+}
+
+/* 3. The Answer Wrapper (The Animation Engine) */
+.QnaCard>.answer-wrapper {
+    display: grid;
+    /* Start hidden with a 0 fractional unit */
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When the card has the 'open' class, expand the grid to 1 fractional unit */
+.QnaCard.open>.answer-wrapper {
+    grid-template-rows: 1fr;
+}
+
+/* 4. The Answer Text */
+.QnaCard>.answer-wrapper>.answer {
+    overflow: hidden;
+    /* Crucial: prevents text from spilling out while height is 0 */
+    margin: 0;
+    padding-top: 0;
+    color: rgba(248, 250, 252, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0;
+    transition: opacity 0.3s ease, padding-top 0.3s ease;
+}
+
+/* Fade in the text and add spacing only when open */
+.QnaCard.open>.answer-wrapper>.answer {
+    opacity: 1;
+    padding-top: 1rem;
+    /* Creates space between Q and A */
+}
+
+.QnaCard>.answer-wrapper>.answer>strong {
+    color: #10b981;
+    /* Emerald highlight for the "Answer:" label */
+}

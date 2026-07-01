@@ -1,0 +1,89 @@
+/* product-card.css */
+
+/* Main Card Container */
+.ProductCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px; /* Tighter gap for smaller footprint */
+    width: 100%;
+    max-width: 320px; /* Shrunk from 420px */
+    padding: 16px; /* Reduced padding */
+    border-radius: 16px;
+    box-sizing: border-box;
+    
+    /* Vibrant Glassmorphism - Navy Gradient base with a subtle neon tint */
+    background: linear-gradient(135deg, rgba(13, 14, 33, 0.8), rgba(22, 26, 66, 0.8));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 204, 0.2); 
+    box-shadow: 0 8px 32px 0 rgba(0, 255, 204, 0.08); /* Faint neon cyan shadow */
+    
+    /* Smooth hover response */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+/* Hover Effects - Intense Neon Glow */
+.ProductCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 255, 204, 0.8);
+    box-shadow: 0 12px 40px 0 rgba(0, 255, 204, 0.4), 
+                0 0 20px rgba(0, 255, 204, 0.2) inset;
+}
+
+/* Info Details Container (First Child Div) */
+.ProductCard > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Tighter vertical spacing */
+    flex: 1;
+}
+
+/* Product Name Styling */
+.ProductCard > div:first-child > span:nth-child(1) {
+    font-size: 1.05rem; /* Scaled down */
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Product Price Styling - Glowing Cyan */
+.ProductCard > div:first-child > span:nth-child(2) {
+    font-size: 1rem; /* Scaled down */
+    font-weight: 800;
+    color: #00ffcc; /* High-vibrancy neon */
+    text-shadow: 0 0 12px rgba(0, 255, 204, 0.5); /* Added glow effect */
+}
+
+/* Product Stock Styling */
+.ProductCard > div:first-child > span:nth-child(3) {
+    font-size: 0.75rem; /* Scaled down */
+    font-weight: 600;
+    color: #b8c4d9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Image Container (Second Child Div) */
+.ProductCard > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Shrunk from 100px */
+    height: 80px; /* Shrunk from 100px */
+    flex-shrink: 0;
+}
+
+/* The Image Element */
+.ProductCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 255, 204, 0.3); /* Vibrant border tying into the theme */
+    background-color: rgba(255, 255, 255, 0.05);
+}

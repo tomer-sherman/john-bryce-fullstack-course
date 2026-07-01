@@ -1,0 +1,117 @@
+/* 1. Main Container */
+.Home {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Centers the content in the main area */
+    width: 100%;
+    animation: fadeInContent 0.5s ease-out forwards;
+}
+
+/* 2. Glassmorphism Form Card */
+.Home>form {
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Spacing between form rows */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 3. Form Labels */
+.Home>form>label {
+    color: rgba(248, 250, 252, 0.8);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: -0.75rem;
+    /* Pulls the label closer to its input */
+}
+
+/* 4. Form Inputs & Selects */
+.Home>form>input,
+.Home>form>select {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #f8fafc;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Styling the dropdown options so they are legible on light/dark OS themes */
+.Home>form>select>option {
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+/* Input Focus States (Glowing Indigo Ring) */
+.Home>form>input:focus,
+.Home>form>select:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* 5. The Submit Button */
+.Home>form>button {
+    margin-top: 1rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover State */
+.Home>form>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+}
+
+/* Button Active/Click State */
+.Home>form>button:active {
+    transform: translateY(1px);
+}
+
+/* 6. Form Divider */
+.Home>hr {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    margin: 1rem 0;
+}
+
+/* 7. Subtle Entrance Animation */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

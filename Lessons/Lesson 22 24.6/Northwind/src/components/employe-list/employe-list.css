@@ -1,0 +1,70 @@
+/* employe-list.css */
+
+/* 1. The Main Grid Wrapper */
+.EmployeList {
+    display: grid;
+    /* Responsive layout: fits as many 220px cards as possible */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    padding: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 2. The Individual Employee Card (Strictly Scoped) */
+.EmployeList > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 30px 20px;
+    border-radius: 24px;
+    text-align: center;
+
+    /* Deep Navy Glassmorphism */
+    background: linear-gradient(135deg, rgba(13, 14, 33, 0.7), rgba(22, 26, 66, 0.7));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing Hover State */
+.EmployeList > div:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 255, 204, 0.7);
+    box-shadow: 0 12px 40px 0 rgba(0, 255, 204, 0.25);
+}
+
+/* 3. The Name Text */
+.EmployeList > div > span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    
+    /* Flexbox magic: This pushes the name BELOW the image, 
+       even though it is written first in your HTML! */
+    order: 2; 
+}
+
+/* 4. The Employee Image (Circular Avatar) */
+.EmployeList > div > img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%; /* Turns a square image into a perfect circle */
+    object-fit: cover;
+    
+    /* Neon Cyan Ring */
+    border: 3px solid rgba(0, 255, 204, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    
+    order: 1; /* Pushes the image to the top */
+}

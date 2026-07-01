@@ -1,4 +1,0 @@
-This note page is a page that i take notes during my studies whenever there is some kind of important information for the grand Project.
-
-1. Consider using private, git too contain the project.
-2. Find a way too use a compiler. Safely. TypeScript too JS.

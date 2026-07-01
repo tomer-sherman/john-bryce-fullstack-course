@@ -1,9 +1,0 @@
-1. Always use "use strict mode"
-2. Use IFE (add event listener and abunch of getElementByName("").
-3. Add favicon
-4. Don't use inline styling in The code(Dhtml) -copy the body from f12- then
-Design AI.
-5.Always use a meaning full title, in the projects/ missions.
-6.Always use Header- main footer etc... too put your content inside.
-7.Before Deleteing something always use the Confirm Feature.
-8.When using Ai always check the code too see if you understand the logic.(CAUSE IT CAN SOMETIMES, MAKE SOMESHIT UP that you didn't specifically mean).

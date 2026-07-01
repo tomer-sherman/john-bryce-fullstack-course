@@ -1,0 +1,25 @@
+/* product-list.css */
+
+.ProductList {
+    /* Set up a responsive grid */
+    display: grid;
+    
+    /* Auto-fit creates columns automatically. It won't let a card get smaller than 300px, 
+       but will stretch them up to 1fr to fill available space */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+    /* Gives the glowing hover effects plenty of room to breathe without overlapping */
+    gap: 32px; 
+    
+    padding: 32px;
+    width: 100%;
+    
+    /* Optional: Stops the list from stretching to infinity on massive ultrawide monitors */
+    max-width: 1400px; 
+    margin: 0 auto; /* Centers the whole container on the screen */
+    
+    box-sizing: border-box;
+    
+    /* Ensures the cards stay centered inside their grid columns */
+    justify-items: center; 
+}
