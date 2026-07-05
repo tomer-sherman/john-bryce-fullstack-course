@@ -1,0 +1,67 @@
+/* spinner.css */
+
+.Spinner {
+    /* Forces the container to span the entire width of the card grid */
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+
+    /* Smooth entrance for the loading state */
+    animation: spinnerFadeIn 0.4s ease-out;
+}
+
+.Spinner>img {
+    width: 160px;
+    height: 160px;
+
+    /* Crops the rectangular GIF into a perfect circle */
+    object-fit: cover;
+
+    /* THIS IS THE FIX: Shifts the image down to hide the top text */
+    object-position: center 75%;
+
+    border-radius: 50%;
+
+    background: rgba(30, 27, 75, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    /* Themed AI pulsing glow */
+    animation: aiThinkPulse 2s infinite ease-in-out;
+}
+
+/* Animations scoped strictly to the spinner */
+@keyframes spinnerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aiThinkPulse {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 51, 102, 0.3),
+            0 0 25px rgba(0, 230, 118, 0.2);
+        transform: scale(1);
+    }
+
+    50% {
+        /* Glow gets brighter and the image scales up slightly */
+        box-shadow: 0 0 30px rgba(255, 51, 102, 0.6),
+            0 0 50px rgba(0, 230, 118, 0.4);
+        transform: scale(1.05);
+    }
+
+    100% {
+        box-shadow: 0 0 15px rgba(255, 51, 102, 0.3),
+            0 0 25px rgba(0, 230, 118, 0.2);
+        transform: scale(1);
+    }
+}

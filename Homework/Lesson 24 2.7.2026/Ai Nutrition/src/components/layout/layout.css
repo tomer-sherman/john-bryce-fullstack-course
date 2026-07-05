@@ -1,0 +1,86 @@
+/* layout.css */
+
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    /* Adding a subtle glowing overlay that interacts with the index.css background */
+    background: radial-gradient(circle at top left, rgba(255, 51, 102, 0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(0, 230, 118, 0.15), transparent 40%);
+    animation: layoutFadeIn 1s ease-out;
+}
+
+/* Scoped directly to the header element inside .Layout */
+.Layout>header {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    /* Modern glassmorphism effect */
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    /* Entrance animation */
+    opacity: 0;
+    animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scoped directly to the main element inside .Layout */
+.Layout>main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Leaves room for the form to breathe */
+    padding: 3rem 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Entrance animation with a slight delay so it follows the header */
+    opacity: 0;
+    animation: mainSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+/* Animations 
+  Uniquely named to prevent global conflicts 
+*/
+@keyframes layoutFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes headerSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mainSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

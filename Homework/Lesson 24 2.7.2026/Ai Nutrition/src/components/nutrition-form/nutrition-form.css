@@ -1,0 +1,262 @@
+/* nutrition-form.css */
+
+/* nutrition-form.css */
+
+/* nutrition-form.css */
+
+.NutritionForm {
+    width: 100%;
+    display: grid;
+    /* Cap the card width at 320px so they don't stretch forever, and center them */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+    justify-content: center;
+    gap: 2rem;
+    perspective: 1000px;
+}
+
+/* The Form Container */
+.NutritionForm>form {
+    /* Force the form to take up the entire top row */
+    grid-column: 1 / -1;
+
+    /* Restrict the form's width so it stays clean and centered */
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+
+    /* Inner grid for the 2-column inputs (Keep this as we set it up before) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0;
+
+    background: rgba(20, 25, 45, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: formPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Force the divider to span the entire row before the cards start */
+.NutritionForm>hr {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: linear-gradient(90deg, transparent, var(--tertiary), transparent);
+    margin: 1rem 0;
+    opacity: 0.6;
+    box-shadow: 0 0 10px var(--tertiary);
+}
+
+/* Default all direct children to span both columns (full width) */
+.NutritionForm>form>* {
+    grid-column: span 2;
+}
+
+/* Typography elements */
+.NutritionForm label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Helper text span for the workout */
+.NutritionForm span {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+    margin-top: -0.25rem;
+    font-style: italic;
+}
+
+/* Inputs & Selects */
+.NutritionForm input,
+.NutritionForm select {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.4);
+    /* Made inputs slightly darker to contrast the solid form */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.NutritionForm select option {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* Focus states - Vibrant Neon Outlines */
+.NutritionForm input:focus,
+.NutritionForm select:focus {
+    border-color: var(--primary);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Grid Mapping */
+.NutritionForm>form> :nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 0;
+}
+
+.NutritionForm>form> :nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 0;
+}
+
+.NutritionForm>form> :nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.NutritionForm>form> :nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.NutritionForm>form> :nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.NutritionForm>form> :nth-child(7) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.NutritionForm>form> :nth-child(6) {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.NutritionForm>form> :nth-child(8) {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.NutritionForm>form> :nth-child(9) {
+    grid-row: 5;
+}
+
+.NutritionForm>form> :nth-child(10) {
+    grid-row: 6;
+}
+
+.NutritionForm>form> :nth-child(11) {
+    grid-row: 7;
+    margin-bottom: 0.25rem;
+}
+
+.NutritionForm>form> :nth-child(12) {
+    grid-row: 8;
+}
+
+.NutritionForm>form> :nth-child(13) {
+    grid-row: 9;
+}
+
+.NutritionForm>form> :nth-child(14) {
+    grid-column: 1;
+    grid-row: 10;
+}
+
+.NutritionForm>form> :nth-child(16) {
+    grid-column: 2;
+    grid-row: 10;
+}
+
+.NutritionForm>form> :nth-child(15) {
+    grid-column: 1;
+    grid-row: 11;
+}
+
+.NutritionForm>form> :nth-child(17) {
+    grid-column: 2;
+    grid-row: 11;
+}
+
+.NutritionForm>form> :nth-child(18) {
+    grid-row: 12;
+}
+
+/* Button & Divider Styles */
+.NutritionForm button {
+    margin-top: 2.5rem;
+    padding: 1.25rem;
+    background: var(--accent-gradient);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(255, 51, 102, 0.4);
+}
+
+.NutritionForm button:hover {
+    background-position: right center;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 153, 51, 0.5);
+}
+
+.NutritionForm button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 51, 102, 0.3);
+}
+
+.NutritionForm>hr {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: linear-gradient(90deg, transparent, var(--tertiary), transparent);
+    margin: 1rem 0;
+    opacity: 0.6;
+    box-shadow: 0 0 10px var(--tertiary);
+}
+
+@keyframes formPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95) rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .NutritionForm>form {
+        grid-template-columns: 1fr;
+    }
+
+    .NutritionForm>form>* {
+        grid-column: 1 / -1 !important;
+    }
+
+    .NutritionForm>form> :nth-child(n) {
+        grid-row: auto !important;
+    }
+}
