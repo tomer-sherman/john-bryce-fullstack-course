@@ -1,0 +1,149 @@
+/* --- Table Container --- */
+.Suppliers {
+    width: 100%;
+    overflow-x: auto;
+    /* Ensures table scrolls on small screens */
+
+    /* Glassmorphism Card Effect */
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 1.5rem;
+}
+
+/* --- Table Structure --- */
+.Suppliers table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* --- Table Headers --- */
+.Suppliers th {
+    /* Subtle gradient background for the header row */
+    background: linear-gradient(90deg, rgba(30, 58, 138, 0.4), transparent);
+    color: var(--accent-color);
+    padding: 1.25rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid rgba(14, 165, 233, 0.3);
+    white-space: nowrap;
+}
+
+/* --- Table Cells --- */
+.Suppliers td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: middle;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+/* --- Row Hover & Animation --- */
+.Suppliers tbody tr {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+
+    /* Setup for entrance animation */
+    animation: rowFadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Stagger the animation for the first few rows */
+.Suppliers tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.Suppliers tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.Suppliers tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.Suppliers tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.Suppliers tbody tr:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.Suppliers tbody tr:nth-child(n+6) {
+    animation-delay: 0.6s;
+}
+
+.Suppliers tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    /* Slight pop out effect */
+    transform: scale(1.005);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Suppliers tbody tr:hover td {
+    color: var(--text-light);
+}
+
+/* --- Supplier Images --- */
+.Suppliers img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Makes them perfect circles */
+    border: 2px solid rgba(14, 165, 233, 0.4);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.Suppliers tbody tr:hover img {
+    transform: scale(1.1);
+    border-color: var(--accent-color);
+}
+
+/* --- Action Columns (Update & Delete) --- */
+/* Targets the last two columns of the table without needing classes */
+.Suppliers td:nth-last-child(1),
+.Suppliers td:nth-last-child(2) {
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: filter 0.2s ease, text-shadow 0.2s ease;
+}
+
+/* UPDATE column */
+.Suppliers td:nth-last-child(2) {
+    color: var(--accent-color);
+}
+
+/* DELETE column */
+.Suppliers td:nth-last-child(1) {
+    color: #ef4444;
+    /* Standard destructive red */
+}
+
+.Suppliers td:nth-last-child(1):hover,
+.Suppliers td:nth-last-child(2):hover {
+    filter: brightness(1.3);
+    text-shadow: 0 0 8px currentColor;
+}
+
+/* --- Keyframes --- */
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
