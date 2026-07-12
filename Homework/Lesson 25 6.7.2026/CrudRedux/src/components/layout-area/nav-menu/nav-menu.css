@@ -1,0 +1,104 @@
+/* --- Nav Menu Container --- */
+.NavMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* --- Navigation Links --- */
+.NavMenu a {
+    /* Override global link colors from index.css for the sidebar */
+    color: var(--text-muted);
+    text-shadow: none;
+
+    display: block;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+
+    /* Transparent border keeps sizing stable on hover */
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* --- Hover State --- */
+.NavMenu a:hover {
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    /* Slight indent animation */
+    transform: translateX(6px);
+}
+
+/* --- Active State (Auto-applied by NavLink) --- */
+.NavMenu a.active {
+    color: var(--text-light);
+    font-weight: 600;
+
+    /* Gradient background for the active tab */
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.2), transparent);
+    border-color: rgba(14, 165, 233, 0.3);
+
+    /* Bold accent line on the left */
+    border-left: 4px solid var(--accent-color);
+    box-shadow: inset 2px 0 10px rgba(14, 165, 233, 0.1);
+
+    /* Lock it in place so it doesn't move on hover when active */
+    transform: translateX(0);
+}
+
+/* Animated subtle glow inside the active tab */
+.NavMenu a.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--accent-color);
+    opacity: 0;
+    z-index: -1;
+    animation: pulseGlow 3s infinite alternate;
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 850px) {
+    .NavMenu {
+        /* Switch to a horizontal row to match mobile layout */
+        flex-direction: row;
+        gap: 0.75rem;
+    }
+
+    .NavMenu a {
+        padding: 0.6rem 1.25rem;
+        white-space: nowrap;
+    }
+
+    .NavMenu a:hover {
+        /* Move up instead of right on mobile */
+        transform: translateY(-2px);
+    }
+
+    .NavMenu a.active {
+        /* Move the accent line to the bottom for horizontal nav */
+        border-left: 1px solid rgba(14, 165, 233, 0.3);
+        border-bottom: 3px solid var(--accent-color);
+        background: linear-gradient(180deg, transparent, rgba(14, 165, 233, 0.2));
+    }
+}
+
+/* --- Keyframe Animations --- */
+@keyframes pulseGlow {
+    0% {
+        opacity: 0.02;
+    }
+
+    100% {
+        opacity: 0.08;
+    }
+}

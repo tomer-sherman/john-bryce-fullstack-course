@@ -1,0 +1,143 @@
+/* --- Global Variables --- */
+:root {
+    /* Trustworthy, modern supplier palette */
+    --primary-color: #0f172a;
+    /* Deep Slate */
+    --secondary-color: #1e3a8a;
+    /* Rich Blue */
+    --accent-color: #0ea5e9;
+    /* Vibrant Cyan */
+    --text-light: #f8fafc;
+    --text-muted: #cbd5e1;
+}
+
+/* --- Base Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Animated Gradient Background --- */
+body {
+    /* Oversized background to allow the gradient to pan across the screen */
+    background: linear-gradient(-45deg,
+            var(--primary-color),
+            var(--secondary-color),
+            #000000,
+            var(--primary-color));
+    background-size: 400% 400%;
+    animation: bgPan 15s ease infinite;
+
+    color: var(--text-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Main App Container --- */
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    /* Smooth entry animation for the entire layout */
+    animation: layoutFadeIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* --- Standard Element Styling --- */
+/* These ensure anything inside <Layout /> looks good without custom classes */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+button {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px -1px rgba(14, 165, 233, 0.3);
+}
+
+/* Inputs and Forms */
+input,
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 0.75rem;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
+}
+
+/* --- Keyframe Animations --- */
+
+@keyframes bgPan {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes layoutFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

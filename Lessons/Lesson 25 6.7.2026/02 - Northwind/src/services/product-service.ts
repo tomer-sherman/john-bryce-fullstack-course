@@ -50,8 +50,6 @@ class ProductService {
 
 
 
-
-
         const response = await axios.post<ProductModel>(appConfig.productsUrl, formUtil.toFormData(product));
         const dbProduct = response.data;
         
