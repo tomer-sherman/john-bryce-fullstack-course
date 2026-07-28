@@ -32,7 +32,7 @@ class ProductService {
 
         const product = products[0];
 
-        if (!product) { throw new ClientError(StatusCode.NotFound, "This product does not exist!") }
+        if (!product) { throw new ClientError(StatusCode.NotFound, "This product does not exist!") };
 
         // Return
         return product;
