@@ -1,11 +1,8 @@
 import { UserModel } from "../models/user-model";
 import jwt, { SignOptions } from "jsonwebtoken";
 import { appConfig } from "./app-config";
-import fa from "zod/v4/locales/fa.js";
-import { Role, StatusCode } from "../models/enum";
-import { Credentials } from "../models/credantials";
-import { dal } from "./dal";
-import { ClientError } from "../models/client-error";
+import { Role } from "../models/enum";
+
 
 class Cyber {
 

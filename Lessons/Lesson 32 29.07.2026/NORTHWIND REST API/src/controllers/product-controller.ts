@@ -48,7 +48,7 @@ class ProductController {
 
 
 
-        request.body.image = request.files?.image
+        request.body.image = request.files?.image;
 
         const product = new ProductModel(request.body);
         const dbProduct = await productService.addOneProduct(product);
