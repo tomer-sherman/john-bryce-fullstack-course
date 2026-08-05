@@ -1,0 +1,105 @@
+.Home {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+    align-items: center;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+}
+
+/* Two columns on wider screens - text left, image right. */
+@media (min-width: 860px) {
+    .Home {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+.Home .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.Home .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+}
+
+.Home h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4.5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.Home p {
+    margin: 0;
+    max-width: 60ch; /* Keeps long lines readable. */
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.Home .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 8px;
+}
+
+.Home .btn-primary {
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: var(--radius-sm);
+    border: none;
+    text-decoration: none;
+    transition: background-color var(--transition);
+}
+
+.Home .btn-primary:hover {
+    background-color: var(--accent-dark);
+}
+
+.Home .link-secondary {
+    color: var(--accent-dark);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.Home .link-secondary:hover {
+    text-decoration: underline;
+}
+
+.Home img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Hide the image if it ever loses its src,
+   so the browser stops drawing a broken-image icon: */
+.Home img[src=""] {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .Home .btn-primary,
+    .Home .link-secondary {
+        transition: none;
+    }
+}

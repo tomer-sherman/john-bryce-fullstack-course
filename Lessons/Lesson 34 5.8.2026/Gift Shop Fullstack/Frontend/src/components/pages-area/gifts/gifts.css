@@ -1,0 +1,159 @@
+/* Gifts catalog page - header, audience select, product card grid.
+   The content sits directly on the page background; the cards are the surfaces. */
+
+.Gifts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.Gifts h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+.Gifts .subtitle {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+/* Audience select with a custom data-uri chevron - stroke is the --muted
+   color (#8a7f70); data URIs cannot read CSS custom properties. */
+.Gifts select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 320px;
+    padding: 10px 36px 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background-color: var(--surface);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%238a7f70' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    font: inherit;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.Gifts select:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px;
+}
+
+/* Responsive card grid: */
+.Gifts ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Flex column so the price row pins to the bottom even with short descriptions: */
+.Gifts li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.Gifts li:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+}
+
+.Gifts li h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+/* Description clamped to 3 lines: */
+.Gifts .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.Gifts .price-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.Gifts .final-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.Gifts .original-price {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+.Gifts .discount-badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Empty state - no audience selected yet, or zero results: */
+.Gifts .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 48px 24px;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    background-color: var(--surface-2);
+    text-align: center;
+}
+
+.Gifts .empty-icon {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.Gifts .empty-state p {
+    margin: 0;
+    color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .Gifts li {
+        transition: none;
+    }
+
+    .Gifts li:hover {
+        transform: none;
+    }
+}
