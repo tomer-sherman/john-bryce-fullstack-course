@@ -1,0 +1,119 @@
+/* ============================================
+   Design tokens - change these, the whole site follows.
+   ============================================ */
+
+:root {
+    /* Surfaces */
+    --bg: #05070d;
+    --bg-elevated: #0b0f1a;
+    --surface: rgba(255, 255, 255, 0.028);
+    --surface-hover: rgba(255, 255, 255, 0.055);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    /* Accents */
+    --accent: #22e3ff;
+    --accent-dim: rgba(34, 227, 255, 0.14);
+    --accent-glow: rgba(34, 227, 255, 0.35);
+    --violet: #8b5cff;
+
+    /* Text */
+    --text: #e8eefb;
+    --text-muted: #8b9ab5;
+    --text-faint: #56637d;
+
+    /* Type */
+    --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Cascadia Code", ui-monospace, monospace;
+
+    /* Shape */
+    --radius: 14px;
+    --radius-sm: 9px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layered backdrop: two colored glows over a faint technical grid. */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(900px 500px at 12% -8%, rgba(34, 227, 255, 0.11), transparent 60%),
+        radial-gradient(800px 500px at 92% 8%, rgba(139, 92, 255, 0.10), transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px) 0 0 / 46px 46px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px) 0 0 / 46px 46px;
+    /* Fade the grid out toward the bottom so it never fights the content. */
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 100%);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Consistent keyboard focus everywhere. */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+::selection {
+    background: var(--accent-glow);
+    color: #041016;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Respect users who don't want motion. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

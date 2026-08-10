@@ -1,0 +1,77 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1180px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.Header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Small rotated square with a glow - reads as a logo without needing an asset. */
+.Header .mark {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, var(--accent), var(--violet));
+    box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.Header h1 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.Header h1 span {
+    color: var(--text-faint);
+    font-weight: 500;
+}
+
+.Header .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.Header .status i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 9px var(--accent);
+    animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.35; }
+}
+
+@media (max-width: 640px) {
+    .Header {
+        padding: 0 16px;
+    }
+
+    .Header .status {
+        display: none;
+    }
+}

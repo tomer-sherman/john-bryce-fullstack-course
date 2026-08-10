@@ -1,0 +1,216 @@
+/* ---------- Hero ---------- */
+
+.Home .hero {
+    margin-bottom: 30px;
+}
+
+.Home .eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 11px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.Home .hero h2 {
+    font-size: clamp(28px, 5vw, 40px);
+    margin-bottom: 8px;
+    background: linear-gradient(180deg, var(--text) 40%, var(--text-faint));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.Home .hero p {
+    color: var(--text-muted);
+    max-width: 52ch;
+}
+
+/* ---------- Stat row ---------- */
+
+.Home .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+.Home .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.Home .stat .value {
+    font-family: var(--font-mono);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--accent);
+}
+
+.Home .stat .label {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+/* ---------- Filter bar ---------- */
+
+.Home .toolbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.Home .toolbar label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+.Home select {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 38px 10px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-elevated);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    /* Chevron drawn inline so there is no image file to ship. */
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%238b9ab5' stroke-width='1.6'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 11px;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.Home select:hover {
+    border-color: rgba(34, 227, 255, 0.4);
+}
+
+.Home select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+/* The dropdown list itself is OS-rendered - this keeps it dark too. */
+.Home select option {
+    background: var(--bg-elevated);
+    color: var(--text);
+}
+
+/* ---------- Store cards ---------- */
+
+.Home .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+    gap: 14px;
+}
+
+.Home .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+/* Accent line along the top edge, revealed on hover. */
+.Home .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+}
+
+.Home .card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+    background: var(--surface-hover);
+}
+
+.Home .card:hover::before {
+    opacity: 1;
+}
+
+.Home .tag {
+    align-self: flex-start;
+    padding: 3px 9px;
+    border: 1px solid var(--accent-dim);
+    border-radius: 999px;
+    background: var(--accent-dim);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.Home .card h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.Home .card .address {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+.Home .card .id {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+}
+
+/* ---------- Empty state ---------- */
+
+.Home .empty {
+    padding: 44px 20px;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+@media (max-width: 560px) {
+    .Home .stats {
+        grid-template-columns: 1fr;
+    }
+}

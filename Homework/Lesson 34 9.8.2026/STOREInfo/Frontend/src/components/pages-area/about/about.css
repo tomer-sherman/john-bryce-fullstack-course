@@ -1,0 +1,12 @@
+.About {
+    max-width: 60ch;
+}
+
+.About h2 {
+    font-size: clamp(26px, 4vw, 34px);
+    margin-bottom: 12px;
+}
+
+.About p {
+    color: var(--text-muted);
+}

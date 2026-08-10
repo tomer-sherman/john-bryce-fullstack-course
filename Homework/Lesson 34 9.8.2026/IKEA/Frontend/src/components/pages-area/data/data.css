@@ -1,0 +1,167 @@
+.Data {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0 24px;
+}
+
+.Data form {
+    position: relative;
+    overflow: hidden;
+    width: min(560px, 100%);
+    padding: 32px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    background: linear-gradient(180deg, rgba(18, 26, 44, .78), rgba(10, 15, 26, .78));
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 30px 70px -30px rgba(0, 0, 0, .9),
+        inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+/* Glowing rail across the top edge */
+.Data form::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), var(--violet), transparent);
+    animation: rail 3.5s var(--ease) infinite;
+}
+
+@keyframes rail {
+    50% {
+        opacity: .3;
+    }
+}
+
+.Data h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.Data .sub {
+    margin: 5px 0 26px;
+    font: 400 .72rem/1 var(--mono);
+    letter-spacing: .1em;
+    color: var(--txt-faint);
+}
+
+/* ---------- fields ---------- */
+
+.Data .field {
+    display: grid;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.Data label {
+    font: 600 .68rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--txt-dim);
+}
+
+.Data input,
+.Data select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background-color: rgba(6, 10, 18, .75);
+    color: var(--txt);
+    font: 500 .95rem var(--mono);
+    outline: none;
+    transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background-color .2s;
+}
+
+.Data input::placeholder {
+    color: var(--txt-faint);
+}
+
+.Data input:focus,
+.Data select:focus {
+    border-color: var(--line-hot);
+    background-color: rgba(8, 14, 24, .9);
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, .13),
+        0 0 24px -6px rgba(34, 211, 238, .6);
+}
+
+/* Custom caret, since the native one is invisible on a dark field */
+.Data select {
+    appearance: none;
+    padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%2322d3ee' stroke-width='1.8' d='M1 1.5 6 6.5l5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+
+.Data option {
+    background: #0c1220;
+    color: var(--txt);
+}
+
+/* ---------- validation ---------- */
+
+/* Reserve the row so the layout never jumps when a message appears */
+.Data .err {
+    min-height: 1em;
+    font: 500 .7rem/1 var(--mono);
+    letter-spacing: .04em;
+    color: var(--err);
+}
+
+.Data .field.bad input,
+.Data .field.bad select {
+    border-color: rgba(251, 113, 133, .55);
+}
+
+.Data .field.bad input:focus,
+.Data .field.bad select:focus {
+    box-shadow:
+        0 0 0 3px rgba(251, 113, 133, .13),
+        0 0 24px -6px rgba(251, 113, 133, .6);
+}
+
+/* ---------- submit ---------- */
+
+.Data button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+
+    font: 700 .78rem var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: #04121a;
+    background: linear-gradient(100deg, var(--cyan), var(--violet));
+    box-shadow: 0 10px 30px -10px rgba(34, 211, 238, .7);
+
+    transition: transform .15s var(--ease), filter .2s, box-shadow .2s;
+}
+
+.Data button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+}
+
+.Data button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.Data button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .Data form {
+        padding: 22px;
+    }
+}
