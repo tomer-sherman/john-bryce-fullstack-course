@@ -1,0 +1,120 @@
+[{
+  "_id": {
+    "$oid": "688a02b5aee15b0db4685981"
+  },
+  "details": "Buy one, get one free on Chai all week long!"
+},
+{
+  "_id": {
+    "$oid": "688a02cbaee15b0db4685983"
+  },
+  "details": "10% off Chang when you buy 3 or more bottles"
+},
+{
+  "_id": {
+    "$oid": "688a033eaee15b0db4685985"
+  },
+  "details": "Buy 2 Aniseed Syrup, get the 3rd free"
+},
+{
+  "_id": {
+    "$oid": "688a035baee15b0db4685987"
+  },
+  "details": "20% discount on Chef Anton's Cajun Seasoning"
+},
+{
+  "_id": {
+    "$oid": "688a036daee15b0db4685989"
+  },
+  "details": "50% off Chef Anton's Gumbo Mix for new customers"
+},
+{
+  "_id": {
+    "$oid": "688a037faee15b0db468598b"
+  },
+  "details": "Grandma's Boysenberry Spread on clearance – today only!"
+},
+{
+  "_id": {
+    "$oid": "688a0391aee15b0db468598d"
+  },
+  "details": "Buy 3 Uncle Bob's Organic Dried Pears, pay for only 2"
+},
+{
+  "_id": {
+    "$oid": "688a03a8aee15b0db468598f"
+  },
+  "details": "Free shipping on orders over $100 including Northwoods Cranberry Sauce"
+},
+{
+  "_id": {
+    "$oid": "688a03b8aee15b0db4685991"
+  },
+  "details": "Buy 1 Mishi Kobe Niku, get a $25 voucher for your next purchase"
+},
+{
+  "_id": {
+    "$oid": "688a03c7aee15b0db4685993"
+  },
+  "details": "15% off all seafood products including Ikura"
+},
+{
+  "_id": {
+    "$oid": "688a03efaee15b0db4685995"
+  },
+  "details": "Queso Cabrales: part of the European Cheese Festival – 30% off"
+},
+{
+  "_id": {
+    "$oid": "688a03fdaee15b0db4685997"
+  },
+  "details": "Queso Manchego La Pastora: buy 2, get 10% off your entire cheese order"
+},
+{
+  "_id": {
+    "$oid": "688a040daee15b0db4685999"
+  },
+  "details": "Konbu: 3 for the price of 2 – limited time offer"
+},
+{
+  "_id": {
+    "$oid": "688a041caee15b0db468599b"
+  },
+  "details": "Tofu: student discount available – 20% off with ID"
+},
+{
+  "_id": {
+    "$oid": "688a0429aee15b0db468599d"
+  },
+  "details": "Genen Shouyu: free sample with every order over $50"
+},
+{
+  "_id": {
+    "$oid": "688a0435aee15b0db468599f"
+  },
+  "details": "Pavlova: summer dessert special – 25% off this weekend"
+},
+{
+  "_id": {
+    "$oid": "688a0442aee15b0db46859a1"
+  },
+  "details": "Alice Mutton: loyalty members save 15%"
+},
+{
+  "_id": {
+    "$oid": "688a044faee15b0db46859a3"
+  },
+  "details": "Carnarvon Tigers: limited-time gourmet bundle – save up to 40%"
+},
+{
+  "_id": {
+    "$oid": "688a045caee15b0db46859a5"
+  },
+  "details": "Teatime Chocolate Biscuits: free gift wrap for holiday purchases"
+},
+{
+  "_id": {
+    "$oid": "688a0469aee15b0db46859a7"
+  },
+  "details": "Sir Rodney's Scones: early bird special – 10% off before 10am"
+}]

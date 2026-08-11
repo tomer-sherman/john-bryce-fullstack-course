@@ -17,8 +17,6 @@ class ErrorMiddleware {
     public catchAll(err: any, request: Request, response: Response, next: NextFunction): void {
 
 
-
-
         // Take status:
         const status = err.status || StatusCode.InternalServerError;
 

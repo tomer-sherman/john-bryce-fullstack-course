@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf87"
+  },
+  "firstName": "Nancy",
+  "lastName": "Davolio",
+  "title": "Sales Representative",
+  "birthDate": "1948-12-08",
+  "country": "USA",
+  "city": "Seattle",
+  "address": "507 - 20th Ave. E.\r\nApt. 2A"
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf88"
+  },
+  "firstName": "Andrew",
+  "lastName": "Fuller",
+  "title": "Vice President, Sales",
+  "birthDate": "1952-02-19",
+  "country": "USA",
+  "city": "Tacoma",
+  "address": "908 W. Capital Way"
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf89"
+  },
+  "firstName": "Janet",
+  "lastName": "Leverling",
+  "title": "Sales Representative",
+  "birthDate": "1963-08-30",
+  "country": "USA",
+  "city": "Kirkland",
+  "address": "722 Moss Bay Blvd."
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8a"
+  },
+  "firstName": "Margaret",
+  "lastName": "Peacock",
+  "title": "Sales Representative",
+  "birthDate": "1937-09-19",
+  "country": "USA",
+  "city": "Redmond",
+  "address": "4110 Old Redmond Rd."
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8b"
+  },
+  "firstName": "Steven",
+  "lastName": "Buchanan",
+  "title": "Sales Manager",
+  "birthDate": "1955-03-04",
+  "country": "UK",
+  "city": "London",
+  "address": "14 Garrett Hill"
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8c"
+  },
+  "firstName": "Michael",
+  "lastName": "Suyama",
+  "title": "Sales Representative",
+  "birthDate": "1963-07-02",
+  "country": "UK",
+  "city": "London",
+  "address": "Coventry House\r\nMiner Rd."
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8d"
+  },
+  "firstName": "Robert",
+  "lastName": "King",
+  "title": "Sales Representative",
+  "birthDate": "1960-05-29",
+  "country": "UK",
+  "city": "London",
+  "address": "Edgeham Hollow\r\nWinchester Way"
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8e"
+  },
+  "firstName": "Laura",
+  "lastName": "Callahan",
+  "title": "Inside Sales Coordinator",
+  "birthDate": "1958-01-09",
+  "country": "USA",
+  "city": "Seattle",
+  "address": "4726 - 11th Ave. N.E."
+},
+{
+  "_id": {
+    "$oid": "5e91e29b9c08fc560ce2cf8f"
+  },
+  "firstName": "Anne",
+  "lastName": "Dodsworth",
+  "title": "Sales Representative",
+  "birthDate": "1966-01-27",
+  "country": "UK",
+  "city": "London",
+  "address": "7 Houndstooth Rd."
+}]
