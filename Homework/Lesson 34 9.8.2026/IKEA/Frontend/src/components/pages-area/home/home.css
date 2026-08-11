@@ -1,0 +1,154 @@
+.Home {
+    padding: 6px 0 24px;
+}
+
+.Home .head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.Home .head h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.Home .head .count {
+    font: 500 .7rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--txt-faint);
+}
+
+.Home .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+/* ---------- card ---------- */
+
+.Home .card {
+    position: relative;
+    overflow: hidden;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: linear-gradient(180deg, rgba(18, 26, 44, .6), rgba(10, 15, 26, .6));
+    backdrop-filter: blur(10px);
+    transition: transform .22s var(--ease), border-color .22s, box-shadow .22s;
+}
+
+.Home .card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-hot), transparent);
+    opacity: 0;
+    transition: opacity .22s var(--ease);
+}
+
+.Home .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34, 211, 238, .3);
+    box-shadow: 0 22px 50px -26px rgba(34, 211, 238, .5);
+}
+
+.Home .card:hover::before {
+    opacity: 1;
+}
+
+.Home .card .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.Home .card .tag {
+    padding: 5px 11px;
+    border: 1px solid rgba(34, 211, 238, .3);
+    border-radius: 99px;
+    background: rgba(34, 211, 238, .09);
+
+    font: 600 .62rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: var(--cyan);
+}
+
+.Home .card .uid {
+    font: 500 .66rem/1 var(--mono);
+    letter-spacing: .1em;
+    color: var(--txt-faint);
+}
+
+/* spec rows */
+
+.Home .card dl {
+    margin: 0 0 16px;
+    display: grid;
+    gap: 9px;
+}
+
+.Home .card dl > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px dashed rgba(125, 190, 255, .1);
+}
+
+.Home .card dt {
+    font: 500 .64rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: var(--txt-faint);
+}
+
+.Home .card dd {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: 500 .82rem/1 var(--mono);
+    color: var(--txt);
+}
+
+/* live swatch driven by the product's own color value */
+.Home .card .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, .25);
+}
+
+.Home .card .price {
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    background: linear-gradient(100deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ---------- empty state ---------- */
+
+.Home .empty {
+    padding: 60px 20px;
+    text-align: center;
+    border: 1px dashed var(--line);
+    border-radius: var(--r);
+    font: 500 .74rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--txt-faint);
+}

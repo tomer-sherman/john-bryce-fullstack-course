@@ -1,0 +1,7 @@
+.SignUp > form > * {
+	margin-bottom: 10px;
+}
+
+.SignUp > form {
+    width: 400px;
+}

@@ -1,0 +1,38 @@
+/* Rows: brand bar / nav / page / footer. 1fr on <main> pins the footer down. */
+.Layout {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+}
+
+.Layout > header,
+.Layout > nav {
+    position: sticky;
+    z-index: 10;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(5, 7, 13, 0.72);
+    border-bottom: 1px solid var(--border);
+}
+
+.Layout > header {
+    top: 0;
+}
+
+/* Sits directly under the brand bar, so it must offset by that bar's height. */
+.Layout > nav {
+    top: 65px;
+}
+
+.Layout > main {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 44px 24px 72px;
+}
+
+@media (max-width: 640px) {
+    .Layout > main {
+        padding: 28px 16px 56px;
+    }
+}

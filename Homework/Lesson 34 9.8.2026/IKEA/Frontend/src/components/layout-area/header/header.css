@@ -1,0 +1,61 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 26px 4px 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.Header h1 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -.03em;
+
+    background: linear-gradient(100deg, #fff 8%, var(--cyan) 46%, var(--violet) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 26px rgba(34, 211, 238, .25));
+}
+
+.Header h1 span {
+    font-family: var(--mono);
+    font-weight: 400;
+    opacity: .5;
+}
+
+/* "system online" chip */
+.Header .status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 13px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    background: rgba(10, 16, 28, .6);
+    backdrop-filter: blur(8px);
+
+    font: 500 .68rem/1 var(--mono);
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    color: var(--txt-dim);
+}
+
+.Header .status i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 10px var(--ok);
+    animation: pulse 2s var(--ease) infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .25;
+        transform: scale(.8);
+    }
+}

@@ -1,0 +1,51 @@
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Direct children only - the ">" keeps these off any header/main/footer
+   that a page component might render inside itself: */
+
+/* Sticky top bar with the brand and the nav links: */
+.Layout > header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--surface); /* Fallback when blur is unsupported. */
+    border-bottom: 1px solid var(--border);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+
+    .Layout > header {
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px) saturate(1.4);
+    }
+
+}
+
+/* Inner row - brand on the left, nav on the right, wraps on mobile: */
+.Layout > header .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    width: min(1120px, 100% - 48px);
+    margin-inline: auto;
+    padding-block: 12px;
+}
+
+.Layout > main {
+    flex: 1;
+    width: min(1120px, 100% - 48px);
+    margin-inline: auto;
+    padding-block: 32px;
+    min-width: 0; /* Stops wide content from blowing out the layout. */
+}
+
+.Layout > footer {
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
+}

@@ -1,0 +1,49 @@
+.Menu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 1180px;
+    height: 48px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.Menu a {
+    position: relative;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.16s ease, background 0.16s ease;
+}
+
+.Menu a:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+}
+
+/* react-router adds .active to the matching NavLink. */
+.Menu a.active {
+    color: var(--text);
+    background: var(--accent-dim);
+}
+
+/* Underline bar that only shows on the current route. */
+.Menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -13px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+@media (max-width: 640px) {
+    .Menu {
+        padding: 0 16px;
+    }
+}

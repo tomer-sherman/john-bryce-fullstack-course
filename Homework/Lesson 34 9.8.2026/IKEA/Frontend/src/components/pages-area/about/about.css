@@ -1,0 +1,14 @@
+.About {
+    padding: 6px 0 24px;
+}
+
+.About p {
+    margin: 0;
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: linear-gradient(180deg, rgba(18, 26, 44, .6), rgba(10, 15, 26, .6));
+    backdrop-filter: blur(10px);
+    font: 400 .95rem/1.7 var(--sans);
+    color: var(--txt-dim);
+}

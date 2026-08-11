@@ -1,0 +1,37 @@
+.Menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Lets the pills wrap on narrow screens. */
+    gap: 4px;
+}
+
+/* NavLink renders a plain <a> - styled as a pill: */
+.Menu a {
+    padding: 8px 16px;
+    border-radius: 999px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.Menu a:hover {
+    background-color: var(--surface-2);
+}
+
+/* react-router adds "active" to the NavLink of the current route: */
+.Menu a.active {
+    background-color: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Respect users who prefer no motion: */
+@media (prefers-reduced-motion: reduce) {
+
+    .Menu a {
+        transition: none;
+    }
+
+}

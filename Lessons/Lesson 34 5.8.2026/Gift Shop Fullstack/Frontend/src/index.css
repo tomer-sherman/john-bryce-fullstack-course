@@ -1,0 +1,77 @@
+/* ---------------------------------------------------------------
+   Global baseline - the ONLY file allowed to style bare elements.
+   Everything else is scoped under its own component class.
+   --------------------------------------------------------------- */
+
+/* Design tokens - change a value here, the whole app follows: */
+:root {
+    --bg: #faf8f5;            /* warm paper page background */
+    --surface: #ffffff;       /* cards, bars */
+    --surface-2: #f6f2ec;     /* soft tint: hovers, empty states */
+    --border: #ebe5db;
+    --text: #2a2118;          /* warm ink */
+    --muted: #8a7f70;
+    --accent: #d6456b;        /* rose — buttons, badges, active states */
+    --accent-dark: #b93357;   /* hover + small accent text (contrast) */
+    --accent-soft: #fbeaef;   /* rose tint backgrounds */
+    --danger: #c92f43;
+    --radius: 16px;           /* cards */
+    --radius-sm: 10px;        /* inputs, pills, buttons */
+    --shadow: 0 1px 2px rgba(42, 33, 24, 0.04), 0 4px 16px rgba(42, 33, 24, 0.06);
+    --shadow-lift: 0 2px 4px rgba(42, 33, 24, 0.05), 0 14px 30px rgba(42, 33, 24, 0.10);
+    --gap: 24px;
+    --font-body: "Inter", system-ui, "Segoe UI", Arial, sans-serif;
+    --font-display: "Fraunces", Georgia, serif;
+    --transition: 160ms ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+}
+
+::selection {
+    background-color: var(--accent-soft);
+    color: var(--text);
+}
+
+/* Global keyboard-focus ring: */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Respect users who turn motion off: */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
