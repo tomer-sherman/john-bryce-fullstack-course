@@ -1,0 +1,12 @@
+.Data form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 4px;
+}
+
+.Data .error {
+    color: red;
+    font-size: 0.8rem;
+    min-height: 1rem;
+}

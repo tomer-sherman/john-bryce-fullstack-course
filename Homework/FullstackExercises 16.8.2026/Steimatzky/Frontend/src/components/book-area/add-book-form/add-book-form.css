@@ -1,0 +1,30 @@
+.AddBookForm form {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+.AddBookForm label {
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.AddBookForm input,
+.AddBookForm textarea,
+.AddBookForm select {
+	padding: 5px;
+}
+
+.AddBookForm .error {
+	color: red;
+	font-size: 12px;
+	min-height: 15px;
+}
+
+.AddBookForm button {
+	margin-top: 15px;
+	padding: 8px;
+	cursor: pointer;
+}
