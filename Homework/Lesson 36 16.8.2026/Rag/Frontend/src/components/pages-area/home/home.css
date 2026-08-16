@@ -1,0 +1,400 @@
+/* ============ CipherMind — Home ============ */
+
+.Home {
+    position: relative;
+    min-height: 100vh;
+    padding: 48px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* --- Animated background: drifting neon nebulas --- */
+.Home::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -2;
+    background:
+        radial-gradient(38% 42% at 18% 22%, rgba(0, 229, 255, 0.16), transparent 70%),
+        radial-gradient(42% 46% at 82% 74%, rgba(139, 92, 246, 0.18), transparent 70%),
+        radial-gradient(30% 34% at 68% 12%, rgba(255, 45, 240, 0.10), transparent 70%);
+    animation: nebula-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-drift {
+    from { transform: translate(-2%, -2%) scale(1); filter: hue-rotate(0deg); }
+    to   { transform: translate(3%, 3%) scale(1.08); filter: hue-rotate(35deg); }
+}
+
+/* --- Cyber grid overlay --- */
+.Home::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(0, 229, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.045) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 40%, transparent 100%);
+    pointer-events: none;
+}
+
+/* --- Sweeping scanline --- */
+.Home .scanline {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -30%;
+    height: 22%;
+    z-index: -1;
+    background: linear-gradient(transparent, rgba(0, 229, 255, 0.05), transparent);
+    animation: scan-sweep 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan-sweep {
+    from { transform: translateY(0); }
+    to   { transform: translateY(600%); }
+}
+
+/* --- Hero --- */
+.Home .hero {
+    text-align: center;
+    animation: rise-in 0.7s ease both;
+}
+
+.Home .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.72rem;
+    letter-spacing: 3.5px;
+    color: #2bff88;
+    border: 1px solid rgba(43, 255, 136, 0.35);
+    background: rgba(43, 255, 136, 0.06);
+    border-radius: 999px;
+    padding: 6px 16px;
+    margin-bottom: 18px;
+}
+
+.Home .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2bff88;
+    box-shadow: 0 0 0 0 rgba(43, 255, 136, 0.6);
+    animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    70%  { box-shadow: 0 0 0 9px rgba(43, 255, 136, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(43, 255, 136, 0); }
+}
+
+.Home .logo {
+    font-family: "Orbitron", "Segoe UI", sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6, #ff2df0, #00e5ff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 7s linear infinite;
+    filter: drop-shadow(0 0 22px rgba(0, 229, 255, 0.35));
+}
+
+.Home .logo span {
+    font-weight: 500;
+}
+
+@keyframes gradient-flow {
+    to { background-position: 300% 0; }
+}
+
+.Home .tagline {
+    margin-top: 10px;
+    color: #7d8db3;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- Console (form card) --- */
+.Home .console {
+    width: min(680px, 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 229, 255, 0.22);
+    background: linear-gradient(165deg, rgba(14, 20, 42, 0.85), rgba(8, 11, 26, 0.92));
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 0 45px rgba(0, 229, 255, 0.07),
+        0 24px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 229, 255, 0.03);
+    overflow: hidden;
+    animation: rise-in 0.7s 0.12s ease both;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.Home .console:focus-within {
+    border-color: rgba(0, 229, 255, 0.5);
+    box-shadow:
+        0 0 60px rgba(0, 229, 255, 0.12),
+        0 24px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 229, 255, 0.04);
+}
+
+.Home .console-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(0, 229, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.Home .console-bar span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.Home .console-bar span:nth-child(1) { background: #ff2d6f; box-shadow: 0 0 8px rgba(255, 45, 111, 0.7); }
+.Home .console-bar span:nth-child(2) { background: #ffc72d; box-shadow: 0 0 8px rgba(255, 199, 45, 0.7); }
+.Home .console-bar span:nth-child(3) { background: #2bff88; box-shadow: 0 0 8px rgba(43, 255, 136, 0.7); }
+
+.Home .console-bar em {
+    margin-left: 10px;
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    color: #5d6f96;
+}
+
+.Home .console-body {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 26px 28px;
+}
+
+.Home label {
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00e5ff;
+    margin-bottom: 8px;
+}
+
+.Home textarea,
+.Home input[type="number"] {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #dbe7ff;
+    background: rgba(4, 8, 20, 0.8);
+    border: 1px solid rgba(120, 140, 190, 0.25);
+    border-radius: 9px;
+    padding: 12px 14px;
+    outline: none;
+    caret-color: #00e5ff;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.Home textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.Home input[type="number"] {
+    width: 130px;
+}
+
+.Home textarea:focus,
+.Home input[type="number"]:focus {
+    border-color: #00e5ff;
+    box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.35), 0 0 20px rgba(0, 229, 255, 0.15);
+}
+
+.Home textarea::placeholder {
+    color: #495a80;
+}
+
+.Home .field-error {
+    min-height: 22px;
+    margin: 5px 0 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: #ff3d7f;
+    text-shadow: 0 0 12px rgba(255, 61, 127, 0.5);
+}
+
+/* --- Ask button --- */
+.Home .ask-btn {
+    position: relative;
+    margin-top: 8px;
+    padding: 15px 28px;
+    font-family: "Orbitron", "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #04060e;
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6, #ff2df0);
+    background-size: 220% 100%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-position 0.45s, transform 0.15s, box-shadow 0.3s;
+}
+
+.Home .ask-btn:hover:not(:disabled) {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(0, 229, 255, 0.4), 0 8px 24px rgba(139, 92, 246, 0.35);
+}
+
+.Home .ask-btn:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+.Home .ask-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+}
+
+.Home .ask-btn:hover:not(:disabled)::after {
+    left: 130%;
+}
+
+.Home .ask-btn:disabled {
+    opacity: 0.55;
+    cursor: progress;
+}
+
+/* --- Scanner (loading) --- */
+.Home .scanner {
+    width: min(680px, 100%);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    border-radius: 12px;
+    background: rgba(8, 11, 26, 0.8);
+    padding: 18px 22px;
+    animation: rise-in 0.4s ease both;
+}
+
+.Home .scan-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(0, 229, 255, 0.1);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.Home .scan-bar {
+    width: 38%;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #00e5ff, #8b5cf6);
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.7);
+    animation: scan-bar-move 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes scan-bar-move {
+    from { transform: translateX(-40%); }
+    to   { transform: translateX(220%); }
+}
+
+.Home .scanner p {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #7d8db3;
+    text-transform: uppercase;
+}
+
+.Home .cursor {
+    color: #00e5ff;
+    animation: blink 0.9s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* --- Server error --- */
+.Home .server-error {
+    width: min(680px, 100%);
+    border: 1px solid rgba(255, 61, 127, 0.4);
+    border-radius: 12px;
+    background: rgba(255, 61, 127, 0.08);
+    color: #ff8fb3;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    animation: rise-in 0.4s ease both;
+}
+
+/* --- Answer panel --- */
+.Home .answer {
+    width: min(680px, 100%);
+    border: 1px solid rgba(43, 255, 136, 0.25);
+    border-radius: 12px;
+    background: rgba(8, 16, 24, 0.85);
+    overflow: hidden;
+    animation: rise-in 0.55s ease both;
+    box-shadow: 0 0 35px rgba(43, 255, 136, 0.07);
+}
+
+.Home .answer-head {
+    padding: 11px 20px;
+    font-size: 0.78rem;
+    letter-spacing: 3px;
+    color: #2bff88;
+    background: rgba(43, 255, 136, 0.06);
+    border-bottom: 1px solid rgba(43, 255, 136, 0.18);
+}
+
+.Home .answer p {
+    padding: 20px 22px;
+    line-height: 1.75;
+    color: #cfe3d8;
+    white-space: pre-wrap;
+}
+
+/* --- Footer --- */
+.Home .footer-note {
+    margin-top: auto;
+    padding-top: 18px;
+    font-size: 0.68rem;
+    letter-spacing: 4px;
+    color: #3d4a68;
+}
+
+/* --- Shared entrance animation --- */
+@keyframes rise-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Accessibility: calm everything down if requested --- */
+@media (prefers-reduced-motion: reduce) {
+    .Home::before,
+    .Home .scanline,
+    .Home .logo,
+    .Home .pulse-dot,
+    .Home .scan-bar,
+    .Home .cursor {
+        animation: none;
+    }
+}

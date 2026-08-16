@@ -1,5 +1,4 @@
 import express, { Request, Response, Router } from "express";
-import { ragRetrieval } from "../services/rag-retrival";
 import { promptService } from "../services/prompt-service";
 
 class RagController {

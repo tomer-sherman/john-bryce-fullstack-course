@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    min-height: 100vh;
+    background: #04060e;
+    color: #d6e4ff;
+    font-family: "Share Tech Mono", Consolas, "Courier New", monospace;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: rgba(0, 229, 255, 0.35);
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #04060e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#00e5ff, #8b5cf6);
+    border-radius: 5px;
+}
